@@ -86,7 +86,7 @@ $(document).ready(function(){
 		var nuevoSaldo = saldo.replace(/[$.]/gi,'');
 
 
-		if(valor == 740 || ){
+		if(valor == 740 ){
 			$(".pasaje").append('<span>'+ valor +'</span>');
 			$(".final").append('<span>'+( nuevoSaldo - valor )+ '</span>');
 
