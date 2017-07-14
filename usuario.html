@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
+	<title>TransLab-Consulta de Saldo</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="menu">
+	<nav>
+	  <div class="nav-wrapper">
+	    <a href="#" class="brand-logo center">TRANS-LAB</a>
+	    <ul id="slide-out" class="side-nav">
+	      <li><a href="consulta_de_saldo.html"><i class="material-icons">attach_money</i>Ver saldo</a></li>
+	      <li><a href="calcular_saldo.html"><i class="material-icons">view_module</i>Calcular Tarifa</a></li>
+	      <li><a href="usuario.html"><i class="material-icons">account_circle</i>Perfil</a></li>
+	      <li><a href="pfrecuentes.html"><i class="material-icons">view_headline</i>Preguntas Frecuentes</a></li>
+	      <li><a href="menu.html"><i class="material-icons">home</i>Home</a></li>
+	    </ul>
+	    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+	    <!-- inicio side-nav -->
+	  </div>
+	</nav><!-- termino navbar y side-nav -->
+	<section class="user container-fluid">
+		<div class="row">
+			<div class="col s12 center image-user">
+				<img src="assets/docs/user.png" class="circle" alt="">
+			</div>
+		</div>
+	</section>
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col offset-s1 s10 center menu-boton user-menu">
+				<input type="text" placeholder="correo electronico" id="usuario-email">
+				<input type="number" placeholder="numero de tarjeta" id="numTarjeta">
+				<button id="addTarjeta">AGREGAR TARJETA</button>
+				<div class="tarjetas"><ul></ul></div>
+			</div>
+		</div>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
