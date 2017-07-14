@@ -101,15 +101,22 @@ nav{
 	margin-top: 40px;
 }
 .saldoDeTarjeta, .pasaje , .final{
-	background-color: #f6a800;
+	background-color: black;
 	height: 60px;
 	margin-top: 30px;
 }
 
-.saldoDeTarjeta p, .pasaje p, .final p{
-	background-color: black;
-
-}
 .saldoDeTarjeta span, .pasaje span, .final span{
 	font-size: 2em;
+	color: white;
+}
+.select-dropdown option{
+	font-size: 1.3em;
+	color: white;
+	background-color: grey;
+	border-bottom: 1px solid white;
+}
+.select-dropdown option: hover{
+	background-color: black;
+	color: #f6a800;
 }

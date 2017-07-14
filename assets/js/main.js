@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+		var localKey = [];
+		var clave;
+		for(var i = 2; i< localStorage.length-1; i++){
+			clave = localStorage.key(i);
+			localKey.push(localStorage.getItem(clave));
+		}
+
 	$(".button-collapse").sideNav();
  	$('select').material_select();
 
@@ -25,6 +32,12 @@ $(document).ready(function(){
 /************************USUARIO***********************************/
     var saveEmail =  localStorage.getItem("email");
  	$("#usuario-email").val(saveEmail);
+ 	localKey.forEach(function(e, i){
+ 		$(".tarjetas ul").append('<li>'+ e+ '</li>');
+ 		$(".select-saldo ul").append('<li><span>' + e + '</span></li>' )
+ 	});
+
+ 	
  	
 
  	$("#addTarjeta").click(function(){
@@ -34,21 +47,25 @@ $(document).ready(function(){
  		$("#numTarjeta").val("");
  	})
 
-/***************VER SALDO ********************/
-$(".verSaldo").click(function(){
- $(".tarjetaSaldo").val();
- $.ajax({
+/*************************************VER SALDO **************************************/
+
+	
+	$(".verSaldo").click(function(){
+		$(".saldoDeTarjeta span").html("");
+ 	$(".tarjetaSaldo").val();
+
+ 	$.ajax({
   			url: 'https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + $(".tarjetaSaldo").val() + '',
   			type: 'GET',
   			dataType: 'json',
   		})
   		.done(function(respuesta) {
   			localStorage.setItem("tarjeta1", $(".tarjetaSaldo").val())
-  			localStorage.setItem("saldo", respuesta.saldoTarjeta)
+  			sessionStorage.setItem("saldo", respuesta.saldoTarjeta)
   			console.log(respuesta);
   			console.log(localStorage);
 
-  			$(".saldoDeTarjeta").append('<span>' + localStorage.getItem("saldo") + '</span>')
+  			$(".saldoDeTarjeta").append('<span>' + sessionStorage.getItem("saldo") + '</span>')
   		})
   		.fail(function() {
   			console.log("error");
@@ -61,10 +78,14 @@ $(".verSaldo").click(function(){
 /***************************************CONSULTAR TARIFA***********************/
 	
 	$(".calcular").click(function(){
+		$(".pasaje span").html("");
+		$(".final span").html("");
 		var valor = $("#tarifa").val();
 		console.log(valor);
-		var saldo = localStorage.getItem("saldo");
+		var saldo = sessionStorage.getItem("saldo");
 		var nuevoSaldo = saldo.replace(/[$.]/gi,'');
+
+
 		if(valor == 740){
 			$(".pasaje").append('<span>'+ valor +'</span>');
 			$(".final").append('<span>'+( nuevoSaldo - valor )+ '</span>');
