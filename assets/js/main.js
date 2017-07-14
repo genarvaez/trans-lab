@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	
 		var localKey = [];
 		var clave;
 		for(var i = 2; i< localStorage.length-1; i++){
@@ -86,7 +86,7 @@ $(document).ready(function(){
 		var nuevoSaldo = saldo.replace(/[$.]/gi,'');
 
 
-		if(valor == 740){
+		if(valor == 740 || ){
 			$(".pasaje").append('<span>'+ valor +'</span>');
 			$(".final").append('<span>'+( nuevoSaldo - valor )+ '</span>');
 
