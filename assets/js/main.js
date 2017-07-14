@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	
+
 		var localKey = [];
 		var clave;
-		for(var i = 2; i< localStorage.length-1; i++){
+		for(var i = 1; i< localStorage.length-1; i++){
 			clave = localStorage.key(i);
 			localKey.push(localStorage.getItem(clave));
 		}
